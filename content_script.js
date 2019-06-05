@@ -10,7 +10,7 @@
       let sec = parseInt(el[1]);
       return acc + min * 60 + sec;
     }, 0)
-    return `총 ${totalTime / 60 / 60 | 0}시간 ${totalTime / 60 % 60 | 0}분`
+    return totalTime;
   }
 
   let nodeLists = document.querySelectorAll('.ytd-playlist-video-renderer .ytd-thumbnail-overlay-time-status-renderer');
