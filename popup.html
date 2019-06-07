@@ -2,19 +2,31 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    
+
     <style>
-      body{
-        width:250px;
-        padding:0.5rem 1rem 1rem 1rem;
+      html {
+        font-size: 16px;
       }
-      #result{
-        margin: 10px 0;
-        font-size:2.5rem;
+      html * {
+        box-sizing: border-box;
+        margin: 0;
       }
-      .ratedResult {
+      body {
+        width: 17.5rem;
+        padding: 1rem;
+      }
+      .option-wrapper {
+        display: flex;
+        flex-flow: row;
+        margin-top: 0.75rem;
+      }
+      .option-title {
+        margin-right: 0.75rem;
+        font-size: 1rem;
+      }
+      #result {
         margin: 10px 0;
-        font-size: 1.125rem;
+        font-size: 2.5rem;
       }
       #btn {
         margin: 5px 5px;
@@ -30,8 +42,16 @@
   </head>
   <body>
     <h1>재생목록시간 계산</h1>
+    <div class="option-wrapper">
+      <div class="option-title">배속 선택</div>
+      <select name="rate" id="rate">
+        <option value="1.0">1.0배속</option>
+        <option value="1.25">1.25배속</option>
+        <option value="1.5">1.5배속</option>
+        <option value="2.0">2.0배속</option>
+      </select>
+    </div>
     <div id="result">0분</div>
-    <div class="ratedResult"></div>
     <button id="btn">계산</button>
     <script src="script.js"></script>
   </body>
