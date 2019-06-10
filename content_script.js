@@ -13,8 +13,9 @@
     return totalTime;
   }
 
-  let nodeLists = document.querySelectorAll('.ytd-playlist-video-renderer .ytd-thumbnail-overlay-time-status-renderer');
-  if(!nodeLists.length) nodeLists = document.querySelectorAll('.ytd-playlist-panel-video-renderer .ytd-thumbnail-overlay-time-status-renderer');
+  let nodeLists;
+  if (document.URL.includes('playlist')) nodeLists = document.querySelectorAll('.ytd-playlist-video-renderer .ytd-thumbnail-overlay-time-status-renderer');
+  if (document.URL.includes('watch')) nodeLists = document.querySelectorAll('.ytd-playlist-panel-video-renderer .ytd-thumbnail-overlay-time-status-renderer');
   const timeLists = getTimeLists(nodeLists);
   return getTotalTime(timeLists);
 })();
